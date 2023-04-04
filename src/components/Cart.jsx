@@ -42,7 +42,6 @@ const Cart = (props) => {
                         : value.price}
                     </div>
                   </div>
-
                   <button
                     type="button"
                     className="btn btn-outline-dark"
@@ -52,9 +51,26 @@ const Cart = (props) => {
                       marginLeft: "50px",
                       marginRight: "50px",
                     }}
+                    value={index}
+                    disabled={!value.isVisible}
                   >
                     {value.button}
                   </button>
+                  {!value.isVisible && (
+                    <button
+                      type="button"
+                      className="btn btn-outline-dark"
+                      onClick={props.raction}
+                      style={{
+                        marginBottom: "20px",
+                        marginLeft: "50px",
+                        marginRight: "50px",
+                      }}
+                      value={index}
+                    >
+                      remove from Cart
+                    </button>
+                  )}
                 </div>
               </div>
             );

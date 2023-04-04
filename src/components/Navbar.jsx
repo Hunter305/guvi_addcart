@@ -1,4 +1,5 @@
 import Cart from "./Cart";
+import DropDown from "./DropDown";
 
 const Navbar = (props) => {
   return (
@@ -63,15 +64,7 @@ const Navbar = (props) => {
               </ul>
             </li>
           </ul>
-          <form className="d-flex">
-            <button className="btn btn-outline-dark" type="submit">
-              <i className="bi-cart-fill me-1"></i>
-              Cart
-              <span className="badge bg-dark text-white ms-1 rounded-pill">
-                {props.countN}
-              </span>
-            </button>
-          </form>
+          <DropDown countN={props.countN} name={props.name} />
         </div>
       </div>
     </nav>
